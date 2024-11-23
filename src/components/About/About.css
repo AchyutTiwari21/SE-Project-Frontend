@@ -1,0 +1,26 @@
+#para {
+    border: 1px solid black;
+    background: rgba(3, 3, 3, 0.429);
+    backdrop-filter: blur(10px);
+    padding: 10px;
+    box-shadow: 2px 2px 10px black;
+    padding: 12px;
+    margin-left: 40px;
+    margin-left: 28px;
+}
+
+#photo {
+    width: 100%;
+    height: auto;
+    border: 1px solid black;
+    background: rgba(3, 3, 3, 0.429);
+    backdrop-filter: blur(10px);
+    padding: 10px;
+    box-shadow: 2px 2px 10px black;
+    padding: 12px;
+    margin-left: 40px;
+    margin-left: 28px;
+    display: flex;
+    margin: 40px;
+    margin-top: 60px;
+}
