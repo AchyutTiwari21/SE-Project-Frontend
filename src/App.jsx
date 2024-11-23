@@ -1,7 +1,6 @@
 import { Outlet } from "react-router-dom";
 import Header from "./components/Header/Header";
 import Footer from "./components/Footer/Footer";
-import { Otp } from "./components/OTPInput/Otp";
 import "./App.css";
 
 function App() {
@@ -9,8 +8,7 @@ function App() {
   return (
     <>
        <Header />
-       <Otp />
-       {/* <Outlet /> */}
+       <Outlet />
        <Footer />
     </>
   )
