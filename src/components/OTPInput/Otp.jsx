@@ -10,6 +10,7 @@ export function Otp({
 }) {
     const userData = useSelector(state => state.auth.userData);
     const [error, setError] = useState("");
+    const [message, setMessage] = useState("");
 
     const [attemptLeft, setAttemptLeft] = useState(3);
 
@@ -50,8 +51,8 @@ export function Otp({
     
        <div className="w-full flex-col justify-center items-center m-12">
 
-        <div className="w-full flex justify-center items-center mb-6">
-        <h1 className="text-xl font-semibold text-white">Enter the OTP sent at email: achyut.s.tiwari@gmail.com</h1>
+        <div className="w-full flex justify-center items-center mb-3">
+        <h1 className="text-xl font-semibold text-white">Enter the OTP sent at email: {userData.email}</h1>
         </div>
 
         <div className="w-full flex justify-center items-center mb-6">
@@ -59,8 +60,9 @@ export function Otp({
         </div>
 
     
-        {error && <p className="text-red-600 mt-8 text-center">{error}</p>}
-        
+        {error && <p className="text-red-600 text-xl font-bold mt-8 text-center">{error}</p>}
+        {message && <p className="text-white text-xl font-bold mt-8 text-center">{message}</p>}
+
         <div className="flex justify-center items-center">
         {Array(number).fill(1).map((x, index) => 
         <SubOtpBox 
@@ -85,12 +87,24 @@ export function Otp({
         />)}
         </div>
 
-        <div className="w-full flex justify-center mt-6">
+        <div className="w-full flex justify-center mt-6 gap-8">
         <button 
         onClick={() => submit(values)}
         className="p-4 font-normal text-white bg-purple-800 hover:bg-purple-950 rounded-2xl"
         >
             Submit
+        </button>
+
+        <button 
+        onClick={async() => {
+            await authService.getOtp(userData.email);
+            setError("");
+            setValues(e => e.map(value => value = ""));
+            setMessage("OTP sent successfuly.");
+        }}
+        className="p-4 font-normal text-white bg-purple-800 hover:bg-purple-950 rounded-2xl"
+        >
+            Resend OTP
         </button>
         </div>
     </div>
