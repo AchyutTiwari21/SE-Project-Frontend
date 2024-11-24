@@ -52,9 +52,9 @@ function Header() {
             </nav>
 
             <div class="bu">
-                <a href="http://127.0.0.1:5500/SE-Project/myntra%20copy/SampleWeb.html">
+                <Link to="/get-started">
                 <button id="ge">Get Started</button>
-                </a>
+                </Link>
                 {
                 !status ?
                 (

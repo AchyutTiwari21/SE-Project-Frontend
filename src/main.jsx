@@ -9,6 +9,8 @@ import Signup from './components/Signup/Signup.jsx';
 import Contact from './components/Contact/Contact.jsx';
 import About from './components/About/About.jsx';
 import { Otp } from './components/OTPInput/Otp.jsx';
+import WebList from './pages/WebList.jsx';
+import Succ from "./pages/Succ";
 import { Provider } from "react-redux";
 import { store } from "./app/store.js";
 
@@ -40,6 +42,14 @@ const router = createBrowserRouter([
       {
         path: "/otp",
         element: <Otp />
+      },
+      {
+        path: "/get-started",
+        element: <WebList />
+      },
+      {
+        path: "/succ",
+        element: <Succ />
       }
     ]
   }
@@ -51,4 +61,4 @@ createRoot(document.getElementById('root')).render(
     <RouterProvider router={router} />
   </Provider>
   </StrictMode>
-)
+);

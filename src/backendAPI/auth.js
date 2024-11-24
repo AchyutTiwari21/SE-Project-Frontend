@@ -111,6 +111,49 @@ export class AuthService {
             throw error
         }
     }
+
+    async registerWeb({webName, price}) {
+        try {
+            const response = await fetch("http://localhost:3000/web/register", {
+                method: "POST",
+                headers: {
+                    'Content-Type': 'application/json',
+                },
+                credentials: "include",
+                body: JSON.stringify({webName, price})
+            });
+
+            const data = await response.json();
+            if(!response.ok) {
+                throw new Error(data.message || "Error while registering website.");
+            }
+
+            return data.success;
+
+        } catch (error) {
+            throw error;
+        }
+    }
+
+    async receiveEmail() {
+        try {
+            const response = await fetch("http://localhost:3000/web/send-mail", {
+                method: "GET",
+                headers: {
+                    'Content-Type': 'application/json',
+                },
+                credentials: "include",
+            });
+
+            const data = await response.json();
+            if(!response.ok) {
+                throw new Error(data.message || "Error while fetching email!");
+            }
+            return data.success; 
+        } catch (error) {
+            throw error;
+        }
+    }
 }
 
 const authService = new AuthService();
