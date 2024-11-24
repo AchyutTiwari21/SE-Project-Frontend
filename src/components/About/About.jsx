@@ -5,6 +5,7 @@ import Comm from "./Comm";
 import Rphoto from "../../images/Rupesh.jpg";
 import Vphoto from "../../images/VikasChauhan.jpg";
 import Jphoto from "../../images/Jai.png";
+import Me from "../../images/Me.jpg";
 
 function About() {
     return (
@@ -31,6 +32,16 @@ function About() {
                 />
 
                 <Comm
+                photo={Me}
+                name="Achyut Tiwari"
+                role="Backend Developer"
+                desc="Achyut Tiwari played a vital role as the backend developer for our Software Engineering (SE) project, showcasing exceptional technical expertise and problem-solving skills. He developed robust APIs that ensured seamless communication between the frontend and backend, managed the database efficiently, and optimized query performance to enhance the system’s functionality.
+                Achyut was instrumental in integrating backend modules and conducted thorough testing to ensure reliability and security. His efforts in optimizing server performance reduced latency, improving the overall user experience.
+
+                Beyond his technical contributions, Achyut’s proactive approach, teamwork, and dedication greatly contributed to the project’s success. His ability to address challenges with innovative solutions proved invaluable, and his hard work has been deeply appreciated by the entire team."
+                />
+
+                <Comm
                 photo={Vphoto}
                 name="Vikas Chauhan"
                 role="UI/UX Designer"
@@ -44,6 +55,8 @@ function About() {
                 role="Frontend Developer"
                 desc="Rupesh Singh Rawat made significant contributions as a Frontend Developer in our college Software Engineering Project by designing and implementing an intuitive, visually appealing, and responsive user interface. He prioritized mobile-first design, created reusable components, and optimized the frontend for performance, resulting in a seamless and efficient user experience. Collaborating closely with backend developers, he ensured smooth integration across the application and actively resolved issues to enhance stability. His dedication to refining the UI based on user feedback added substantial value to the project, making his role critical to our team’s success. He made useful contribuion in developing our website. Withour his contribution we would have not been able to do this development."
                 />
+
+                
 
             </div>
         </div>
